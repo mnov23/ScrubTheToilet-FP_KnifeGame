@@ -3,6 +3,8 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
+
+
 [System.Serializable]
 public class Weapon
 {
@@ -26,10 +28,12 @@ public class LoadoutManager : MonoBehaviour
     public TextMeshProUGUI weaponStatsText;
     public TextMeshProUGUI weaponDescriptionText;
     public Image weaponIconImage; // Optional
-    public Button nextButton;
-    public Button previousButton;
-    public Button startGameButton;
-    public Button backButton;
+
+    // buttons, Java style coding lmao
+    public Button ImageNextButton;
+    public Button ImagePreviousButton;
+    public Button ImageStartGameButton;
+    public Button ImageReturnButton;
 
     [Header("3D Preview")]
     public Transform weaponPreviewParent; // Where to spawn the 3D model
@@ -46,10 +50,10 @@ public class LoadoutManager : MonoBehaviour
     void Start()
     {
         // Hook up buttons
-        if (nextButton != null) nextButton.onClick.AddListener(NextWeapon);
-        if (previousButton != null) previousButton.onClick.AddListener(PreviousWeapon);
-        if (startGameButton != null) startGameButton.onClick.AddListener(StartGame);
-        if (backButton != null) backButton.onClick.AddListener(BackToMenu);
+        if (ImageNextButton != null) ImageNextButton.onClick.AddListener(NextWeapon);
+        if (ImagePreviousButton != null) ImagePreviousButton.onClick.AddListener(PreviousWeapon);
+        if (ImageStartGameButton != null) ImageStartGameButton.onClick.AddListener(StartGame);
+        if (ImageReturnButton != null) ImageReturnButton.onClick.AddListener(BackToMenu);
 
         // Display first weapon
         if (weapons.Length > 0)
@@ -165,10 +169,10 @@ public class LoadoutManager : MonoBehaviour
     void OnDestroy()
     {
         // Clean up listeners
-        if (nextButton != null) nextButton.onClick.RemoveListener(NextWeapon);
-        if (previousButton != null) previousButton.onClick.RemoveListener(PreviousWeapon);
-        if (startGameButton != null) startGameButton.onClick.RemoveListener(StartGame);
-        if (backButton != null) backButton.onClick.RemoveListener(BackToMenu);
+        if (ImageNextButton != null) ImageNextButton.onClick.RemoveListener(NextWeapon);
+        if (ImagePreviousButton != null) ImagePreviousButton.onClick.RemoveListener(PreviousWeapon);
+        if (ImageStartGameButton != null) ImageStartGameButton.onClick.RemoveListener(StartGame);
+        if (ImageReturnButton != null) ImageReturnButton.onClick.RemoveListener(BackToMenu);
     }
 }
 
@@ -212,3 +216,6 @@ public class LoadoutManager : MonoBehaviour
  *    
  *    many, many, many more edits to be included.
  *    
+ *  
+ *    
+ *    */

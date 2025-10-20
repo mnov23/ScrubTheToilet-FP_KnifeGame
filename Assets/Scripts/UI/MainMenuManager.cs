@@ -2,13 +2,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class MainMenuManager : MonoBehaviour
+public class MainMenu : MonoBehaviour
 {
     [Header("Menu Buttons")]
-    public Button playButton;
-    public Button settingsButton;
-    public Button creditsButton;
-    public Button quitButton;
+    public Button ImageStartButton;
+    public Button ImageLoadoutButton;
+    public Button ImageAboutButton;
+    public Button ImageExitButton;
 
     [Header("Audio")]
     public AudioSource menuMusic;
@@ -40,10 +40,10 @@ public class MainMenuManager : MonoBehaviour
         }
 
         // Hook up button clicks
-        playButton.onClick.AddListener(OnPlayClicked);
-        settingsButton.onClick.AddListener(OnSettingsClicked);
-        creditsButton.onClick.AddListener(OnCreditsClicked);
-        quitButton.onClick.AddListener(OnQuitClicked);
+        ImageStartButton.onClick.AddListener(OnPlayClicked);
+        ImageLoadoutButton.onClick.AddListener(OnSettingsClicked);
+        ImageAboutButton.onClick.AddListener(OnCreditsClicked);
+        ImageExitButton.onClick.AddListener(OnQuitClicked);
     }
 
     void PlayButtonSound()
@@ -85,6 +85,9 @@ public class MainMenuManager : MonoBehaviour
 
 
         /* Settings (vibe coded) -> Loadout (my original structure) */
+
+        SceneManager.LoadScene("Loadout");
+        // go into Loadout.
     }
 
     void OnCreditsClicked()
@@ -119,10 +122,10 @@ public class MainMenuManager : MonoBehaviour
     void OnDestroy()
     {
         // Clean up listeners to prevent memory leaks
-        if (playButton != null) playButton.onClick.RemoveListener(OnPlayClicked);
-        if (settingsButton != null) settingsButton.onClick.RemoveListener(OnSettingsClicked);
-        if (creditsButton != null) creditsButton.onClick.RemoveListener(OnCreditsClicked);
-        if (quitButton != null) quitButton.onClick.RemoveListener(OnQuitClicked);
+        if (ImageStartButton != null) ImageStartButton.onClick.RemoveListener(OnPlayClicked);
+        if (ImageLoadoutButton != null) ImageLoadoutButton.onClick.RemoveListener(OnSettingsClicked);
+        if (ImageAboutButton != null) ImageAboutButton.onClick.RemoveListener(OnCreditsClicked);
+        if (ImageExitButton != null) ImageExitButton.onClick.RemoveListener(OnQuitClicked);
     }
 }
 
@@ -149,5 +152,7 @@ public class MainMenuManager : MonoBehaviour
  *    vers. 7 artifact of vibecoded script C#
  *    
  *    many, many, many more edits to be included.
+ *    
+ *   
  *    
  *    */

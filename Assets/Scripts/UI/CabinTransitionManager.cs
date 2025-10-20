@@ -2,6 +2,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
+/*
+ // commented to prevent compiler errors.
+
 public class CabinTransitionController : MonoBehaviour
 {
     [Header("Camera Settings")]
@@ -120,7 +123,7 @@ public class CabinTransitionController : MonoBehaviour
         // Ensure final rotation is exact
         doorTransform.localEulerAngles = endRot;
     }
-}
+}  */  // commented to prevent compiler errors.
 
 
 /* handcrafted documentation: 
