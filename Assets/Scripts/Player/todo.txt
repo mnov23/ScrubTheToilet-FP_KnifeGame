@@ -1,0 +1,4 @@
+split the player Class into 2 classes
+
+one for Player (main character)
+one for Soratnik (NPC character)
